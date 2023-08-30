@@ -12,7 +12,20 @@
 4 - Criação de anúncios
  
 5 - Aba para checar anúncios
- 
 
+6 - Deletar anúncio
+
+7 - Favoritar anúncio
+
+8 - Lista de favoritos
+
+9 - Mostrar anúncios por categoria
+
+10 - Adicionar e vizualizar Feedback
+
+11 - Notificações
+
+12 - Envio de Email
+       
  ## Membros do grupo:
  Donvicton Monteiro, Edeilson costa, Gabriela Pontes, Lucas Vinicius.
