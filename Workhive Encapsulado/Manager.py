@@ -10,13 +10,13 @@ class Manager():
         self._users = {}
         self._ads_dict = {}
         self.users = {
-            'Gabi': User('Gabi', '1234556', '123'),
+            'Don': User('Don', '1234556', '123'),
             'Lara': User('Lara', '9876543', '321')
         }
         
         self.ads_dict = {
-            1: Ad('Gabi', 'tecnologia', 'crio sites', '76543'),
-            2: Ad('Gabi', 'Marcenaria', 'mesas artesanais', '123'),
+            1: Ad('Don', 'tecnologia', 'crio sites', '76543'),
+            2: Ad('Don', 'Marcenaria', 'mesas artesanais', '123'),
             3: Ad('Lara', 'Hidráulico', 'conserto canos', '45'),
             4: Ad('Lara', 'eletricista', 'crio tomadas', '150'),
         }
