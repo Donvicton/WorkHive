@@ -86,6 +86,7 @@ class Manager():
         print('\n*** MENU ***')
         print('1 para criar usuário.')
         print('2 para fazer login.')
+        print('3 para sair.')
         return int(input('\nSelect option: '))
 
     def menu_logado(self):
@@ -113,6 +114,8 @@ class Manager():
                     self.create_user_menu()
                 elif option == 2:
                     self.login_menu()
+                elif option == 3:
+                    return
     
             else:
                 option = self.menu_logado()
@@ -224,7 +227,7 @@ class Manager():
     def favoritar(self):
         id_anuncio = int(input('Qual o ID do anúncio que deseja favoritar? '))
         if id_anuncio in self.ads_dict:
-            self.users[self._logged_username].favoritar(id_anuncio)
+            self._get_users()[self._get_logged_username()].favoritar(id_anuncio)
             self.ads_dict[id_anuncio].favoritar()  # Chama o método favoritar do objeto Ad
             print('Anúncio favoritado com sucesso!')
         else:
