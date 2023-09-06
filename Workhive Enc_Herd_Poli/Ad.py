@@ -10,6 +10,8 @@ class Ad():
     def add_feedback(self, feedback):
         self.__feedbacks.append(feedback)
 
+    def set_username(self, username):
+        self.__username = username
     def get_username(self):
         return self.__username
 

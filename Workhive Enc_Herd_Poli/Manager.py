@@ -1,4 +1,8 @@
-from User import *
+import sys
+from standart_user import *
+from All_users import *
+from adm_user import *
+from user import *
 from Ad import Ad
 import smtplib
 import ssl
@@ -22,7 +26,7 @@ class Manager():
         
         self.execute()
 
-
+    # Métodos encapsulados
 
     def _get_logged_username(self):
         return self._logged_username
@@ -36,8 +40,6 @@ class Manager():
     def _get_ads_dict(self):
         return self._ads_dict
 
-
-    # Métodos encapsulados
     def _send_email(self, email_receiver, subject, body):
         email_sender = self._get_email_sender()
         email_password = self._get_email_password()
@@ -70,23 +72,11 @@ class Manager():
         else:
             print(f"Anúncio com ID {id_anuncio} não encontrado.\n")
 
-    def _get_users(self):
-        return self.all_users.get_users()  # Encapsulamento
-
-    def _get_ads_dict(self):
-        return self.ads_dict  # Encapsulamento
-
-    def _get_logged_username(self):
-        return self._logged_username  # Encapsulamento
-
-    def _set_logged_username(self, username):
-        self._logged_username = username  # Encapsulamento
-
     def menu_principal(self):
         print('\n*** MENU ***')
         print('1 para criar usuário.')
         print('2 para fazer login.')
-        print('3 para sair.')
+        print('3 para')
         return int(input('\nSelect option: '))
 
     def menu_logado(self):
@@ -186,16 +176,16 @@ class Manager():
         option = int(input("Digite sua opção: "))
 
         if option == 1:
-            self._get_users()[self._get_logged_username()].edit_username(self.all_users.users)
+            self._get_users()[self._get_logged_username()].edit_username(self.all_users.get_users())
 
         elif option == 2:
-            self._get_users()[self._get_logged_username()].edit_password(self.all_users.users)
+            self._get_users()[self._get_logged_username()].edit_password(self.all_users.get_users())
 
         elif option == 3:
-            self._get_users()[self._get_logged_username()].edit_cpf(self.all_users.users)
+            self._get_users()[self._get_logged_username()].edit_cpf(self.all_users.get_users())
         
     def delete_user(self):
-        if self._get_users()[self._get_logged_username()].delet_user(self.all_users.users) == 1:
+        if self._get_users()[self._get_logged_username()].delet_user(self.all_users.get_users()) == 1:
             print(f"Usuário {self._get_logged_username()} removido com sucesso!")
             self.logout()
 
